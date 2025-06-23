@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ශ්‍රී ලංකා මෙතෝදිස්ත සභාව - දක්ෂිණ දිසාව - වාර්තා පුවරුව</title>
+  <style>
+    :root {
+      --primary-color: #8B0000;
+      --secondary-color: #f4f6f9;
+      --accent-color: #D4AF37;
+      --text-color: #333333;
+      --light-text: #6c757d;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --header-gradient: linear-gradient(135deg, #700000, #8B0000);
+    }
+    
+    body {
+      font-family: 'Arial', 'Iskoola Pota', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: var(--secondary-color);
+    }
+    
+    header {
+      background: var(--header-gradient);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .logo {
+      height: 90px;
+      margin-right: 20px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .report-title {
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+      font-weight: normal;
+      opacity: 0.9;
+    }
+    
+    .report-subtitle {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    
+    .intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .intro::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+    }
+    
+    .tabs-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      margin-bottom: 3rem;
+    }
+    
+    .tab-container {
+      display: inline-flex;
+      gap: 12px;
+      padding: 12px 5px;
+      white-space: nowrap;
+    }
+    
+    .tab-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .tab-container::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 3px;
+    }
+    
+    .tab-container::-webkit-scrollbar-track {
+      background: rgba(244, 246, 249, 0.8);
+    }
+    
+    .tab {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: white;
+      background-color: var(--primary-color);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(139, 0, 0, 0.2);
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .tab:hover {
+      background-color: #700000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+    }
+    
+    .content-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-color);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    
+    .card h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      padding-bottom: 0.8rem;
+      position: relative;
+    }
+    
+    .card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent-color);
+    }
+    
+    footer {
+      background: var(--header-gradient);
+      color: white;
+      text-align: center;
+      padding: 2.5rem;
+      margin-top: 4rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      height: 60px;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    #adminBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 10px 18px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      font-weight: 600;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    #adminBtn:hover {
+      background-color: #700000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .report-info {
+      text-align: center;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .report-info::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 2px;
+      background: var(--accent-color);
+    }
+    
+    .stats-highlight {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .stat-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      min-width: 180px;
+      flex: 1;
+    }
+    
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0.5rem 0;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--light-text);
+    }
+    
+    #totalBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 150px;
+      padding: 10px 18px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      font-weight: 600;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    #totalBtn:hover {
+      background-color: #c9a227;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .content-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .logo {
+        height: 70px;
+      }
+      
+      .tab {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+      
+      .intro {
+        padding: 1.5rem;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+      
+      .stats-highlight {
+        flex-direction: column;
+      }
+      
+      #totalBtn {
+        right: 30px;
+        bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="Logo.jpg" alt="ශ්‍රී ලංකා මෙතෝදිස්ත සභාව ලාංඡනය" class="logo">
+      <div class="header-content">
+        <h1>ශ්‍රී ලංකා මෙතෝදිස්ත සභාව - දක්ෂිණ දිසාව</h1>
+        <p class="report-title"> සංඛ්‍යාලේඛන වාර්තාව</p>
+        <p class="report-subtitle">දෙව්මැඳුරු, ගොඩනැගිලි, සේවකයන් හා සාමාජිකත්ව විශ්ලේෂණය</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <h2>සාදරයෙන් පිළිගනිමු!</h2>
+      <p>දක්ෂිණ දිසාවේ මෙතෝදිස්ත සභාවේ වාර්ෂික ක්‍රියාකාරකම් හා සංවර්ධනය පිළිබඳ විස්තරාත්මක විශ්ලේෂණය</p>
+    </div>
+
+    <div class="report-info">
+      <p>2025 මාර්තු 21 දිනෙන් අවසන් වර්ෂය සඳහා වාර්තාගත දත්ත</p>
+    </div>
+
+    <div class="stats-highlight">
+      <div class="stat-box">
+        <div class="stat-number">72</div>
+        <div class="stat-label">සභාවන්
+</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">15878</div>
+        <div class="stat-label">මුලු ක්‍රිස්තියානි
+</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">6871</div>
+        <div class="stat-label">පවුල් ඒකක
+</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">163</div>
+        <div class="stat-label">නමස්කාර ස්ථාන</div>
+      </div>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tab-container">
+        <a href="තංගල්ල.php" class="tab">තංගල්ල</a>
+        <a href="මාතර.php" class="tab">මාතර</a>
+        <a href="හිනිඳුම.php" class="tab">හිනිඳුම</a>
+        <a href="ගාල්ල.php" class="tab">ගාල්ල</a>
+        <a href="කලුතර.php" class="tab">කලුතර</a>
+        <a href="පානදුර.php" class="tab">පානදුර</a>
+        <a href="රාවතාවත්ත.php" class="tab">රාවතාවත්ත</a>
+        <a href="මොරටුමුල්ල.php" class="tab">මොරටුමුල්ල</a>
+        <a href="සීදුව.php" class="tab">සීදුව</a>
+        <a href="කුරණ.php" class="tab">කුරණ-මීගමුව</a>
+        <a href="මිනුවන්ගොඩ.php" class="tab">මිනුවන්ගොඩ</a>
+        <a href="කටාන-මිරිස්වත්ත.php" class="tab">කටාන-මිරිස්වත්ත</a>
+        <a href="වයඹ-උතුර.php" class="tab">වයඹ-උතුර</a>
+        <a href="වයඹ-දකුණ.php" class="tab">වයඹ-දකුණ</a>
+        <a href="කන්තලේ.php" class="tab">කන්තලේ</a>
+        <a href="අනුරාධපුර.php" class="tab">අනුරාධපුර-පුත්තලම</a>
+        <a href="මින්නේරිය.php" class="tab">මින්නේරිය</a>
+        <a href="දෙනියාය.php" class="tab">දෙනියාය</a>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="card">
+        <h3></h3>
+        <p>මෙම වාර්තාව තුලින් ශ්‍රී ලංකා මෙතෝදිස්ත සභාව - දක්ෂිණ දිසාව 2025 /03/21 දිනෙන් අවසන් වර්ෂයේ දෙව්මැඳුරැ , ගොඩනැගිලි , සේවකයන් හා සාමාජිකත්ව පිළිබඳ සංඛ්‍යා වාර්තාවේ
+</p>
+      </div>
+      
+      <div class="card">
+        <h3></h3>
+        <p>2024/25 වාර්ෂික වාර්තාවට අනුව, සභාවන් 72 ක්, පවුල් ඒකක 6,851 ක්, සහ මුළු ක්‍රිස්තියානි 15,878 ක් ලෙස වාර්තා වේ.නමස්කාර ස්ථාන 163 ක්, පූර්ණ කාලීන දේවගැති 53 ක්, සහ ස්වෙච්ඡා සේවකයන් 1,248 ක් සිටී.
+සාමාජිකයන් 12,014 ක් වන අතර, බෞතිස්ම ලැබූවන් 226 ක් වේ.
+</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <img src="Logo.jpg" alt="ශ්‍රී ලංකා මෙතෝදිස්ත සභාව ලාංඡනය" class="footer-logo">
+      <p> © ශ්‍රී ලංකා මෙතෝදිස්ත සභාව - දක්ෂිණ දිසාව. සියලුම හිමිකම් ඇවිරිණි.</p>
+      
+    </div>
+  </footer>
+
+         
+
+  <button id="totalBtn" onclick="window.location.href='total.php'">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m0 1a5 5 0 1 1 0-10 5 5 0 0 1 0 10"/>
+      <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+      <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+      <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+    </svg>
+    සම්පූර්ණ වාර්තාව
+  </button>
+
+  
+</body>
+</html>
